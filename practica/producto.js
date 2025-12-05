@@ -7,27 +7,27 @@ class Producto{
     // metodo mostrarinfo()
     // metodo vender(cantidad)
     // metodo reabastecer(cantidad)
-mostrarInfo(){
-console.log(`El producto ${this.nombre} tiene un precio de ${this.precio} con un stock ${this.stock}`); 
-}
+    mostrarInfo(){
+    console.log(`El producto ${this.nombre} tiene un precio de ${this.precio} con un stock ${this.stock}`); 
+    return; 
+    }
 
-vender(cantidad){
-this.stock--; 
-this.cantidad = this.stock; 
-console.log(`vendidas ${this.cantidad}. Stock restante ${this.stock}`); 
-}
+    vender(cantidad){
+        this.stock -=cantidad;
+        console.log(`vendidas ${cantidad}. Stock restante ${this.stock}`);
+        return; 
+    }
 
-rebastecer(cantidad){
-this.stock++; 
-console.log(`Stock aumentado. Nuevo stock ${this.stock}`); 
-}
+    rebastecer(cantidad){
+        this.stock+=cantidad; 
+        console.log(`Stock aumentado. Nuevo stock ${this.stock}`); 
+         return; 
+    }
 }
 
 const tecladomecanico = new Producto("teclado mécanico", 9.99, 15); 
 tecladomecanico.mostrarInfo(); 
-tecladomecanico.vender(); 
-tecladomecanico.vender(); 
-tecladomecanico.vender(); 
+tecladomecanico.vender(5); 
 tecladomecanico.mostrarInfo(); 
-tecladomecanico.rebastecer(); 
+tecladomecanico.rebastecer(10); 
 tecladomecanico.mostrarInfo(); 
